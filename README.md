@@ -2,6 +2,9 @@
 
 ## Getting Started with Docker
 
+- wslのセットアップがまだなら[wslのセットアップ](docs/install_wsl.md)から
+- Dockerのインストールの詳細は[Dockerのセットアップ](docs/install_docker.md)へ
+
 ### 1. wslのアップデート
 <!-- microsoft storeで`Windows Subsystem for Linux`と検索 -->
 <!-- <img src="./docs/images/windows_subsystem_for_linux.png" width="320px"> -->
@@ -14,8 +17,7 @@ wsl --update
 ### 2. docker ceのインストール
 以下をwsl内で実行
 ```sh
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+sudo sh -c "$(curl -fsSL https://get.docker.com)"
 sudo usermod -aG docker $USER
 sudo sh -c 'echo "[boot]\nsystemd=true" > /etc/wsl.conf'
 ```
@@ -30,9 +32,8 @@ wsl --shutdown
 ```sh
 docker run --rm hello-world
 ```
-
-<!-- ![](./docs/images/docker_test.png) -->
-<img src="./docs/images/docker_test.png" width="320px" style="display: block; margin: auto;">
+画像のような出力が出てくればDockerの導入は成功
+![hello-world](images/wsl_4.png)
 
 ## Containers using Dev Containers with vscode
 
