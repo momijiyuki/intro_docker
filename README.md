@@ -2,8 +2,8 @@
 
 ## Getting Started with Docker
 
-- wslのセットアップがまだなら[wslのセットアップ](docs/install_wsl.md)から
-- Dockerのインストールの詳細は[Dockerのセットアップ](docs/install_docker.md)へ
+- wslのセットアップがまだなら[wslのセットアップ][install_wsl]から
+- Dockerのインストールの詳細は[Dockerのセットアップ][install_docker]へ
 
 ### 1. wslのアップデート
 <!-- microsoft storeで`Windows Subsystem for Linux`と検索 -->
@@ -33,7 +33,7 @@ wsl --shutdown
 docker run --rm hello-world
 ```
 画像のような出力が出てくればDockerの導入は成功
-![hello-world](images/wsl_4.png)
+![hello-world](docs/images/wsl_4.png)
 
 ## Containers using Dev Containers with vscode
 
@@ -97,3 +97,8 @@ RUN apt-get update && \
 RUN python -m pip install --upgrade pip
 RUN python -m pip install numpy scikit-learn matplotlib
 ```
+
+
+<!-- path list -->
+[install_wsl]: docs/install_wsl_and_docker/install_wsl.md
+[install_docker]: docs/install_wsl_and_docker/install_docker.md
