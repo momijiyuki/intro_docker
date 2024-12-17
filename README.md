@@ -61,7 +61,6 @@ docker run --rm hello-world
 		"vscode": {
 			"settings": {
                 "diffEditor.ignoreTrimWhitespace": false,
-				"explorer.openEditors.visible": 0,
                 "files.insertFinalNewline": true,
                 "files.trimTrailingWhitespace": true,
 				"markdown-preview-enhanced.scrollSync": false
@@ -70,7 +69,6 @@ docker run --rm hello-world
 			"extensions": [
 				"oderwat.indent-rainbow",
 				"yzhang.markdown-all-in-one",
-				"yzane.markdown-pdf",
 				"shd101wyy.markdown-preview-enhanced",
 				"donjayamanne.python-extension-pack"
 				// "ms-toolsai.jupyter",
@@ -86,9 +84,9 @@ docker run --rm hello-world
 FROM python:3.11-bullseye
 USER root
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && \
+RUN DEBIAN_FRONTEND=noninteractive \
+	apt-get update && \
+    apt-get purge -y imagemagick imagemagick-6-common && \
     apt-get install -y --no-install-recommends \
     python3-tk && \
     apt-get -y clean && \
