@@ -54,27 +54,27 @@ docker run --rm hello-world
 
 ```json
 {
-	"name": "python 3.11",
-	"build": { "dockerfile": "Dockerfile" },
-	"runArgs": ["--init", "--name", "py_workbench"],
-	"customizations": {
-		"vscode": {
-			"settings": {
+    "name": "python 3.11",
+    "build": { "dockerfile": "Dockerfile" },
+    "runArgs": ["--init", "--name", "py_workbench"],
+    "customizations": {
+        "vscode": {
+            "settings": {
                 "diffEditor.ignoreTrimWhitespace": false,
                 "files.insertFinalNewline": true,
                 "files.trimTrailingWhitespace": true,
-				"markdown-preview-enhanced.scrollSync": false
-				// "notebook.lineNumbers": "on"
-			},
-			"extensions": [
-				"oderwat.indent-rainbow",
-				"yzhang.markdown-all-in-one",
-				"shd101wyy.markdown-preview-enhanced",
-				"donjayamanne.python-extension-pack"
-				// "ms-toolsai.jupyter",
-			]
-	  	}
-	}
+                "markdown-preview-enhanced.scrollSync": false
+                // "notebook.lineNumbers": "on"
+            },
+            "extensions": [
+                "oderwat.indent-rainbow",
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                "donjayamanne.python-extension-pack"
+                // "ms-toolsai.jupyter",
+            ]
+          }
+    }
 }
 ```
 
@@ -85,7 +85,7 @@ FROM python:3.11-bullseye
 USER root
 
 RUN DEBIAN_FRONTEND=noninteractive \
-	apt-get update && \
+    apt-get update && \
     apt-get purge -y imagemagick imagemagick-6-common && \
     apt-get install -y --no-install-recommends \
     python3-tk && \

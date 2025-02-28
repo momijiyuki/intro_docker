@@ -11,6 +11,7 @@ Windows Subsystem for Linuxの略でWindows上で動作するLinux
   - wslやdockerを操作可能な統合開発環境
 - [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?hl=ja-jp&gl=JP)
   - PowerShellやWSLを同一のウィンドウでタブとして操作可能
+  - (必須ではないけどあると便利)
 ### 2. vscodeに拡張機能を追加
 
 以下の3つの拡張機能をvscodeにインストールする
@@ -72,5 +73,14 @@ Windows Subsystem for Linuxの略でWindows上で動作するLinux
     - passwordは画面に表示されないが、入力はされていることに注意
 4. PowerShell上で`wsl -l -v`と実行し、VERSIONが2になっていることを確認する
     ![](../images/pwsh_4.png)
+
+6. VERSIONが2になっていない場合
+    ```pwsh
+    wsl --set-default-version 2
+    wsl --set-version Ubuntu-22.04 2
+    ```
+    - 1行目のコマンドはwslの既定をwsl2に設定する
+    - 2行目のコマンドは VERSION が1だった場合(wsl1)にwsl2に変更する
+    - `wsl -l -v` で表示されたNAMEを `--set-version` の後に入力する
 
 [^vscode]: 「[Codeで開く]アクションを追加する」を選択するとディレクトリやファイルを右クリックでvscode上でアクセス可能
